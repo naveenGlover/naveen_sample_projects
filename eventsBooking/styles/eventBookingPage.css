@@ -1,0 +1,113 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    font: 15px/1.5 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    overflow: visible;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+header{
+    background-color:transparent;
+    overflow: visible;
+    margin: 12px 7%;
+}
+header .title{
+    float: left;
+    display: flex;
+    font-variant: small-caps;
+    
+}
+header #highlight{
+    color: rgb(15, 67, 240);
+    font-weight:bolder;
+}
+header .nav{
+    margin-top: 10px;
+    float: right;
+}
+header .nav a{
+    padding: 10px;
+    text-decoration: none;
+    color:grey;
+}
+
+header a:hover{
+    font-weight: 600;
+    cursor: pointer;
+    color:whitesmoke;
+    background-color: rgb(15, 67, 240);
+}
+
+#home-btn{
+    padding: 3px 10px;
+    border: 0px solid gray;
+    border-radius: 5px;
+}
+
+#boxes{
+    width: 85%;
+    margin: auto;
+}
+
+.noEvents{
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+}
+
+.event{
+    border: 1px solid blue;
+    border-radius: 10px;
+    padding: 10px;
+    width: 16%;
+    margin: 10px;
+    height: 187px;
+    float: left;
+    line-height: 1.8;
+    background-color: beige;
+    min-width: 159px;
+}
+
+.event:hover{
+    background-color: bisque;
+}
+
+.event-box{
+    font-size: 13px;
+    overflow: auto;
+    height: 60px;
+    word-break: break-all;
+}
+
+.event-box::-webkit-scrollbar {
+    display: none;
+  }
+
+.book-btn{
+    border: 0px solid black;
+    border-radius: 5px;
+    margin-top: 10px;
+    width: 100%;
+    padding: 10px;
+    color: whitesmoke;
+    background-color: rgb(15, 67, 240);
+}
+.book-btn:hover{
+    cursor:pointer;
+    box-shadow: 0 0 0 2px whitesmoke,0 0 0 3px blue;
+}
+
+.event-name{
+    font-weight:bolder;
+    text-transform: capitalize;
+    text-align: center;
+}
+.author{
+    text-transform: capitalize;
+    color: blue;
+}

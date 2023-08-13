@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/styles/createEvent.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
+    <script src="/scripts/createEvent.js" defer></script>
+</head>
+<body onload="return pageOnload()" id="completed">
+    <header>
+        <div class="title">
+            <h1><span id="highlight">Lotus</span> Events Booking</h1>
+        </div>
+        <div class="nav">
+            <nav>
+                <a href="/pages/userPage.html" onclick="return removeKeys()">My Events</a>
+                <button id="logout-btn" onclick="return delCurrentUser()">Logout</button>
+            </nav>
+        </div>
+    </header>
+    <center>
+        <h1 id="created-msg" style="color: lightgreen;"></h1>
+    </center>
+    <div id="container">
+        <form id="form" action="#">
+            <div class="input-control">
+                <label for="eventName">Event Name<span class="star-mrk">*</span></label>
+                <input id="eventName" name="eventName" type="text" placeholder="Enter Event Name" autocomplete="off">
+                <div class="error"></div>
+            </div>
+            <div class="input-control">
+                <label for="days">No.of Days<span class="star-mrk">*</span></label>
+                <input id="days" name="days" type="number" placeholder="Enter How Many Days">
+                <div class="error"></div>
+            </div>
+            <div class="input-control" id="duration-input">
+                <label for="duration">Slot Duration<span class="star-mrk">*</span></label>
+                <div class="duration-inp">
+                <input id="duration"name="duration" type="number" placeholder="Enter Slot Duration">
+                    <select name="format" id="format">
+                        <option value="min" style="font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;">Minute</option>
+                        <option value="hrs" style="font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;">Hour</option>
+                    </select>
+                </div>
+                <div id="error"></div>
+            </div>
+            <p id="eventDays">Choose Events Days<span class="star-mrk">*</span></p>
+            <div class="" id="week-days">
+                <div class="week-day">
+                    <div class="week-day-label">
+                        <input class="checkbox" type="checkbox" id="mon" name="week-day" value="mon" onclick="timeShowing(this.id)" checked>
+                        <label class="checkbox" for="mon"> Monday</label>
+                    </div>
+                    <div class="dayTime" id="monTime">
+                        <input type="time" name="monStart" id="monStart" value="09:00" onfocus="this.showPicker()"><span class="space-gap">to</span>
+                        <input type="time" name="monEnd" id="monEnd" value="18:00" onfocus="this.showPicker()"><br>
+                        <span id="monerror"></span>
+                    </div>
+                </div>
+                <div class="week-day">
+                    <div class="week-day-label">
+                        <input class="checkbox" type="checkbox" id="tue" name="week-day" value="tue" onclick="timeShowing(this.id)" checked>
+                        <label class="checkbox" for="tue"> Tuesday</label><br>
+                    </div>
+                    <div class="dayTime" id="tueTime">
+                        <input type="time" onfocus="this.showPicker()" name="tueStart" id="tueStart" value="09:00"><span class="space-gap">to</span>
+                        <input type="time" onfocus="this.showPicker()" name="tueEnd" id="tueEnd" value="18:00"><br>
+                        <span id="tueerror"></span>
+                    </div>
+                </div>
+                <div class="week-day">
+                    <div class="week-day-label">
+                        <input class="checkbox" type="checkbox" id="wed" name="week-day" value="wed" onclick="timeShowing(this.id)" checked>
+                        <label class="checkbox" for="wed"> Wednesday</label><br>
+                    </div>
+                    <div class="dayTime" id="wedTime">
+                        <input type="time" onfocus="this.showPicker()" name="wedStart" id="wedStart" value="09:00"><span class="space-gap">to</span>
+                        <input type="time" onfocus="this.showPicker()" name="wedEnd" id="wedEnd" value="18:00"><br>
+                        <span id="wederror"></span>
+                    </div>
+                </div>
+                <div class="week-day">
+                    <div class="week-day-label">
+                        <input class="checkbox" type="checkbox" id="thu" name="week-day" value="thu" onclick="timeShowing(this.id)" checked>
+                        <label class="checkbox" for="thu"> Thursday</label><br>
+                    </div>
+                    <div class="dayTime" id="thuTime">
+                        <input type="time" onfocus="this.showPicker()" name="thuStart" id="thuStart" value="09:00"><span class="space-gap">to</span>
+                        <input type="time" onfocus="this.showPicker()" name="thuEnd" id="thuEnd" value="18:00"><br>
+                        <span id="thuerror"></span>
+                    </div>
+                </div>
+                <div class="week-day">
+                    <div class="week-day-label">
+                        <input class="checkbox" type="checkbox" id="fri" name="week-day" value="fri" onclick="timeShowing(this.id)" checked>
+                        <label class="checkbox" for="fri"> Friday</label><br>
+                    </div>
+                    <div class="dayTime" id="friTime">
+                        <input type="time" onfocus="this.showPicker()" name="friStart" id="friStart" value="09:00"><span class="space-gap">to</span>
+                        <input type="time" onfocus="this.showPicker()" name="friEnd" id="friEnd" value="18:00"><br>
+                        <span id="frierror"></span>
+                    </div>
+                </div>
+                <div class="week-day">
+                    <div class="week-day-label">
+                        <input class="checkbox" type="checkbox" id="sat" name="week-day" value="sat" onclick="timeShowing(this.id)" checked>
+                        <label class="checkbox" for="sat"> Saturday</label><br>
+                    </div>
+                    <div class="dayTime" id="satTime">
+                        <input type="time" onfocus="this.showPicker()" name="satStart" id="satStart" value="09:00"><span class="space-gap">to</span>
+                        <input type="time" onfocus="this.showPicker()" name="satEnd" id="satEnd" value="18:00"><br>
+                        <span id="saterror"></span>
+                    </div>
+                </div>
+                <div class="week-day">
+                    <div class="week-day-label">
+                        <input class="checkbox" type="checkbox" id="sun" name="week-day" value="sun" onclick="timeShowing(this.id)" checked>
+                        <label class="checkbox" for="sun"> Sunday</label><br>
+                    </div>
+                    <div class="dayTime" id="sunTime">
+                        <input type="time" onfocus="this.showPicker()" name="sunStart" id="sunStart" value="09:00"><span class="space-gap">to</span>
+                        <input type="time" onfocus="this.showPicker()" name="sunEnd" id="sunEnd" value="18:00"><br>
+                        <span id="sunerror"></span>
+                    </div>
+                </div>
+                <div id="weekDaysError"></div>
+            </div>
+            <div class="input-control eventDesc">
+                <label for="eventDesc">Event Description</label>
+                <textarea name="eventDesc" id="eventDesc" rows="5" placeholder="Enter Your Event Description.."></textarea>
+                <div id="event"></div>
+            </div>
+            <button id="createEventBtn" type="submit" value="submit">Create Slot</button>
+        </form>
+    </div>
+</body>
+</html>
