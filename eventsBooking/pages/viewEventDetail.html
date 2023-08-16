@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Page</title>
+    <link rel="stylesheet" href="/styles/viewEventDetail.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+    <script defer src="/scripts/viewEventDetail.js"></script>
+    <script src="/index.js" defer></script>
+</head>
+
+<body onload="return pageOnloadView()">
+    <header>
+        <div class="title">
+            <h1><a href="../index.html"><span id="highlight">Royal</span> Events </a></h1>
+        </div>
+        <div class="nav">
+            <nav class="nav-tag">
+                <a id="userName"><i class="fa-regular fa-user"></i><span id="username">User</span></a>
+                <a href="/pages/userPage.html" onclick="return removeUpdate()">DashBoard</a>
+                <a href="/pages/createEvent.html" onclick="return removeUpdate()">Create Event</a>
+                <button id="logout-btn" onclick="return delCurrentUser()">Logout</button>
+            </nav>
+        </div>
+    </header>
+
+    <div class="wholeContainer">
+        <div class="container">
+            <div class="eventDetails">
+                <div class="event-details">
+                    <div class="event-key">Event:</div>
+                    <div class="event-value" id="eventName">
+                        <!-- event name -->
+                    </div>
+                </div>
+                <div class="event-details">
+                    <div class="event-key">No.of Days:</div>
+                    <div class="event-value" id="eventDays">
+                        <!-- event days -->
+                    </div>
+                </div>
+                <div class="event-details">
+                    <div class="event-key">Duration:</div>
+                    <div class="event-value" id="eventDuration">
+                        <!-- slot duration -->
+                    </div>
+                </div>
+                <div class="event-details">
+                    <div class="event-key">Description:</div>
+                    <div class="event-value" id="eventDesc">
+                        <!-- slot description -->
+                    </div>
+                </div><br>
+            </div>
+            <div class="slotDetails">
+                <p><b>Slot Timing:</b></p>
+                <div id="slotTiming">
+                    <!-- slot Timings -->
+                </div>
+            </div>
+        </div>
+        <div class="btns">
+            <button onclick="editEvent()" class="btn">Edit </button>
+            <button onclick="deleteEvent()" class="btn delBtn">Delete </button>
+        </div>
+    </div>
+    <h1 style="margin-left: 7%;">Users Booked:</h1>
+    <div class="bookedDetails" id="bookedDetails">
+        <!-- appointment cards -->
+        <div class="noEvents"><span>
+                <center>
+                    <img src="/assert/empty.png" width=300px height=300px>
+                    <h3>There was No Slots Booked</h3>
+                </center>
+            </span>
+        </div>
+    </div>
+</body>
+
+</html>

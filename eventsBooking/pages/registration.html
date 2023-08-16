@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="/styles/registration.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  <script src="/scripts/registration.js" defer></script>
+  <script src="/index.js" defer></script>
+  <title>Registraion Form</title>
+</head>
+
+<body onload="return pageOnloadRegister()" id="completed">
+  <header>
+    <div class="title">
+      <h1><span id="highlight">Royal</span> Events </h1>
+    </div>
+    <div class="nav">
+      <nav>
+        <a id="home-btn" href="/pages/eventBookingPage.html">Events</a>
+        <a id="home-btn" href="/index.html">Home</a>
+      </nav>
+    </div>
+  </header>
+  <form action="#" class="form" id="form">
+    <h1 class="text-center title">Registration Form</h1>
+    <!-- Progress bar -->
+    <div class="progressbar">
+      <div class="progress" id="progress"></div>
+      <div class="progress-step progress-step-active" data-title="Slots"></div>
+      <div class="progress-step" data-title="Contact"></div>
+      <div class="progress-step" data-title="Verify"></div>
+    </div>
+    <div class="main-phase" id="main-phase">
+      <!-- calender phase -->
+      <div class="calendar-phase" id="calendar-phase">
+        <div class="calendar">
+          <div class="calendar-header">
+            <span class="year-change" id="prev-year">
+              <pre><i class="fa-solid fa-caret-left"></i></pre>
+            </span>
+            <span class="month-picker" id="month-picker">April</span>
+            <span class="year-change" id="next-year">
+              <pre><i class="fa-solid fa-caret-right"></i></pre>
+            </span>
+            <div class="year-picker">
+              <span id="year">2022</span>
+            </div>
+          </div>
+          <div class="calendar-body">
+            <div class="calendar-week-day">
+              <div>Sun</div>
+              <div>Mon</div>
+              <div>Tue</div>
+              <div>Wed</div>
+              <div>Thu</div>
+              <div>Fri</div>
+              <div>Sat</div>
+            </div>
+            <div class="calendar-days" id="calendar-days"></div>
+          </div>
+          <div class="month-list"></div>
+        </div>
+      </div>
+      <!-- Steps -->
+      <div class="form-step form-step-active">
+        <h3 style="margin: 18px 0 0 0;"> Select Slot:</h3>
+        <div class="eventSlots">
+          <div class="eventSlotsBlock" id="eventSlotsBlock">
+          </div>
+        </div>
+        <div class="">
+          <a href="#" class="btn btn-next width-50 ml-auto" id="eventSlotPage">Next</a>
+        </div>
+      </div>
+      <div class="form-step">
+        <div class="userDetails">
+          <div class="input-control">
+            <label for="userName">User Name<span class="star-mrk">*</span></label>
+            <input id="userName" name="userName" type="text" placeholder="Enter Your Name">
+            <div class="error"></div>
+          </div>
+          <div class="input-control">
+            <label for="mobileno">Mobile No<span class="star-mrk">*</span></label>
+            <input id="mobileno" name="mobileno" type="text" placeholder="Enter Mobile No">
+            <div class="error"></div>
+          </div>
+          <div class="input-control">
+            <label for="email">E-Mail<span class="star-mrk">*</span></label>
+            <input id="email" name="email" type="email" placeholder="Enter Your Email">
+            <div class="error"></div>
+          </div>
+        </div>
+        <div class="btns-group">
+          <a href="#" class="btn" id="backToEvnets">Back</a>
+          <a href="#" class="btn btn-next" id="registerUserPage">Next</a>
+        </div>
+      </div>
+      <div class="form-step">
+        <div id="verifyDetails">
+
+        </div>
+        <div id="confirmation">
+          <input type="checkbox" id="verify" name="verify" value="verify">
+          <label for="verify">Please verify the above Details are Correct!</label>
+        </div>
+        <span id="error" style="color:red;"></span>
+        <div class="btns-group">
+          <a href="#" class="btn btn-prev">Back</a>
+          <button type="submit" value="submit" class="btn">Submit</button>
+        </div>
+      </div>
+    </div>
+  </form>
+</body>
+
+</html>
