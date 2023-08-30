@@ -170,9 +170,12 @@ function selectedDateColor() {
 document.body.addEventListener('click', doCheck);
 function doCheck({ target }) {
   if (target.classList.contains("calendar-day-event")) {
-    previousDate = document.getElementById(dateKeyId);
-    previousDate.style.color = "black";
-    previousDate.style.backgroundColor = "#F5F5F5";
+    console.log("dateKey Id", dateKeyId);
+    let previousDate = document.getElementById(dateKeyId);
+    if (previousDate) {
+      previousDate.style.color = "black";
+      previousDate.style.backgroundColor = "#F5F5F5";
+    }
     target.style.color = "white";
     target.style.backgroundColor = "blue";
     dateKeyValue = new Date(target.getAttribute("value"));
